@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 namespace msp {
 	struct Point {
-		int x;int y;
+		float x;float y;
 	};
 	class Triangle {
 	   sf::ConvexShape shape;
