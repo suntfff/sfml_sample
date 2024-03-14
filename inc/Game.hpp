@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-#include <Figures.hpp>
+#include <Circle.hpp>
+#include <cmath>
 namespace msp
 {
 	class Game
@@ -8,18 +9,19 @@ namespace msp
 		int width;
 		int height;
 		std::string capture;
-		msp::Circle* crl; msp::Rectangle* rect; msp::Line* ln; msp::Triangle* tr;
+		msp::Circle* crl;
 		int n;
+		float v;
+		float alfa;
+		const long double pi = acos(-1);
 		sf::RenderWindow window;
-
 	public:
-		Game(int width, int height, const std::string& capture, int n);
+		Game(int width, int height, const std::string& capture);
 		Game(const Game& other);
 		Game& operator = (const Game& other);
+		float random(float min, float max);
 		void Setup_Circle();
-		void Setup_Rectangle();
-		void Setup_Line();
-		void Setup_Triangle();
+		void Touch_Border(Circle& obj);
 		void LifeCycle();
 		~Game();
 	};
